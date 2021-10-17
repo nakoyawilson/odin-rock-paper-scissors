@@ -19,7 +19,14 @@ function game() {
     let playerWins = 0;
     let computerWins = 0;
     for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt("Choose: Rock, Paper or Scissors?")
+        let playerSelection = ""
+        let promptUser = true
+        while (promptUser) {
+            playerSelection = prompt("Choose: Rock, Paper or Scissors?").toLowerCase()
+            if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
+                promptUser = false;
+            }
+        }
         const results = playRound(playerSelection, computerPlay());
         console.log(`Round ${i + 1}: ${results}`)
         if (results.includes("You Win!")) {
