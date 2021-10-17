@@ -1,3 +1,5 @@
+const startButton = document.querySelector("button");
+
 function computerPlay() {
     const moves = ["Rock", "Paper", "Scissors"];
     const randomIndex = Math.floor(Math.random() * 3);
@@ -44,4 +46,4 @@ function game() {
     }
 }
 
-game();
+startButton.addEventListener("click", game);
